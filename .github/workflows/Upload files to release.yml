@@ -1,0 +1,48 @@
+name: Upload files to release
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 12 * *'
+
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      # 获取latest release tag，cut切割无关内容。和仓库中LocalReleaseTag对比，之后输出tag给之后的步骤
+      - name: Download Acidanthera Hackintosh Tools
+        id: download
+        run: |
+          chmod +x download.sh && bash download.sh
+          OpenCorePkg_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidanthera/OpenCorePkg/tags | grep 'name' | cut -d\" -f4 | head -1 )
+          echo "::set-output name=version::${OpenCorePkg_TAG}"
+
+      - name: Zip archiving
+        id: archiving
+        run: |
+          zip -q -r all-files-v${{ steps.download.outputs.version }}.zip ./*.zip
+          zip -q -r Components-v${{ steps.download.outputs.version }}.zip ./Components
+
+      - name: Upload files to release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: Acidanthera Hackintosh Tools
+          tag_name: ${{ steps.download.outputs.version }}
+          # body_path: Changelog
+          files: |
+            ./*.zip
+
+      # push到GitHub的项目当中
+      - name: Push
+        if: steps.set-version.outputs.status == 'success'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "README.md"
+          git push -v --progress
