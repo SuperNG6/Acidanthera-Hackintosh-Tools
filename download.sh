@@ -34,7 +34,7 @@ wget -q -P ./OpenCore/X64/EFI/OC/Drivers/ https://github.com/acidanthera/OcBinar
 # 创建 Components 文件夹
 mkdir ./Components
 # 复制关键文件到 Components 文件夹
-cp -r ./AppleALC/AppleALC.kext ./Components/kext/
+cp -r ./AppleALC/AppleALC.kext ./Components/kext/AppleALC.kext
 cp -r ./IntelMausi/IntelMausi.kext ./Components/kext/
 cp -r ./Lilu/Lilu.kext ./Components/kext/
 cp -r ./NVMeFix/NVMeFix.kext ./Components/kext/
@@ -59,27 +59,28 @@ cp -r ./OpenCore ./Components/
 
 
 # 创建 OpenCore 模板
-cp -r ./OpenCore/X64/EFI ./Components/EFI
+cp -r ./OpenCore/X64/EFI ./EFI
 # 删除非必要文件
-rm -rf ./Components/EFI/OC/Bootstrap
-rm -rf ./Components/EFI/OC/Tools/*
-rm -rf ./Components/EFI/OC/Drivers/*
+rm -rf ./EFI/OC/Bootstrap
+rm -rf ./EFI/OC/Tools/*
+rm -rf ./EFI/OC/Drivers/*
 
 # 复制 OC Drivers
-cp -r ./OpenCore/X64/EFI/OC/Drivers/OpenRuntime.efi ./Components/EFI/OC/Drivers/
-cp -r ./OpenCore/X64/EFI/OC/Drivers/HfsPlus.efi ./Components/EFI/OC/Drivers/
+cp -r ./OpenCore/X64/EFI/OC/Drivers/OpenRuntime.efi ./EFI/OC/Drivers/
+cp -r ./OpenCore/X64/EFI/OC/Drivers/HfsPlus.efi ./EFI/OC/Drivers/
 
 # 复制 VirtualSMC Kexts
-cp -r ./VirtualSMC/Kexts/VirtualSMC.kext ./Components/EFI/OC/Kexts/
-cp -r ./VirtualSMC/Kexts/SMCSuperIO.kext ./Components/EFI/OC/Kexts/
-cp -r ./VirtualSMC/Kexts/SMCProcessor.kext ./Components/EFI/OC/Kexts/
+cp -r ./VirtualSMC/Kexts/VirtualSMC.kext ./EFI/OC/Kexts/
+cp -r ./VirtualSMC/Kexts/SMCSuperIO.kext ./EFI/OC/Kexts/
+cp -r ./VirtualSMC/Kexts/SMCProcessor.kext ./EFI/OC/Kexts/
 
 # 复制 Kexts
-cp -r ./AppleALC/AppleALC.kext ./Components/EFI/OC/Kexts/
-cp -r ./IntelMausi/IntelMausi.kext ./Components/EFI/OC/Kexts/
-cp -r ./Lilu/Lilu.kext ./Components/EFI/OC/Kexts/
-cp -r ./NVMeFix/NVMeFix.kext ./Components/EFI/OC/Kexts/
-cp -r ./VirtualSMC/Kexts/SMCProcessor.kext ./Components/EFI/OC/Kexts/
+cp -r ./AppleALC/AppleALC.kext ./EFI/OC/Kexts/
+cp -r ./IntelMausi/IntelMausi.kext ./EFI/OC/Kexts/
+cp -r ./Lilu/Lilu.kext ./EFI/OC/Kexts/
+cp -r ./WhateverGreen/WhateverGreen.kext ./EFI/OC/Kexts/
+cp -r ./NVMeFix/NVMeFix.kext ./EFI/OC/Kexts/
+cp -r ./VirtualSMC/Kexts/SMCProcessor.kext ./EFI/OC/Kexts/
 
 # 生成 README.md
 cat > ./README.md << EOF

@@ -26,6 +26,7 @@ jobs:
         run: |
           zip -q -r all-files.zip ./*.zip
           zip -q -r all-Components.zip ./Components
+          zip -q -r EFI.zip ./EFI
 
       - name: Upload files to release
         uses: softprops/action-gh-release@v1
