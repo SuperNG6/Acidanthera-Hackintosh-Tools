@@ -34,17 +34,17 @@ wget -q -P ./OpenCore/X64/EFI/OC/Drivers/ https://github.com/acidanthera/OcBinar
 # 创建 Components 文件夹
 mkdir ./Components
 # 复制关键文件到 Components 文件夹
-cp -r ./AppleALC/AppleALC.kext ./Components/kext/AppleALC.kext
-cp -r ./IntelMausi/IntelMausi.kext ./Components/kext/
-cp -r ./Lilu/Lilu.kext ./Components/kext/
-cp -r ./NVMeFix/NVMeFix.kext ./Components/kext/
-# cp -r ./WhateverGreen/WhateverGreen.kext ./Components/kext/
-cp -r ./WhateverGreen/WhateverGreen.kext ./Components/kext/
+cp -r ./AppleALC/AppleALC.kext ./Components/
+cp -r ./IntelMausi/IntelMausi.kext ./Components/
+cp -r ./Lilu/Lilu.kext ./Components/
+cp -r ./NVMeFix/NVMeFix.kext ./Components/
+# cp -r ./WhateverGreen/WhateverGreen.kext ./Components/
+cp -r ./WhateverGreen/WhateverGreen.kext ./Components/
 
 # 复制 VirtualSMC kext 到 Components
-cp -r ./VirtualSMC/Kexts/VirtualSMC.kext ./Components/kext/
-cp -r ./VirtualSMC/Kexts/SMCSuperIO.kext ./Components/kext/
-cp -r ./VirtualSMC/Kexts/SMCProcessor.kext ./Components/kext/
+cp -r ./VirtualSMC/Kexts/VirtualSMC.kext ./Components/
+cp -r ./VirtualSMC/Kexts/SMCSuperIO.kext ./Components/
+cp -r ./VirtualSMC/Kexts/SMCProcessor.kext ./Components/
 # 复制 OpenCore 核心组件到 Components
 cp -r ./OpenCore/X64/EFI/BOOT/BOOTx64.efi ./Components/OC/
 cp -r ./OpenCore/X64/EFI/OC/OpenCore.efi ./Components/OC/
