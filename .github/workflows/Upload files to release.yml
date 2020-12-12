@@ -40,7 +40,6 @@ jobs:
 
       # push到GitHub的项目当中
       - name: Push
-        if: steps.set-version.outputs.status == 'success'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
