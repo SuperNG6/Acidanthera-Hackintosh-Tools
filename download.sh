@@ -32,8 +32,8 @@ unzip -q WhateverGreen-1.4.5-RELEASE.zip -d ./WhateverGreen
 wget -q -P ./OpenCore/X64/EFI/OC/Drivers/ https://github.com/acidanthera/OcBinaryData/blob/master/Drivers/HfsPlus.efi
 
 # 创建 Components 文件夹
-mkdir ./Components
-# 复制关键文件到 Components 文件夹
+mkdir ./Components/OC
+# 复制 kext 文件到 Components 文件夹
 cp -r ./AppleALC/AppleALC.kext ./Components/
 cp -r ./IntelMausi/IntelMausi.kext ./Components/
 cp -r ./Lilu/Lilu.kext ./Components/
