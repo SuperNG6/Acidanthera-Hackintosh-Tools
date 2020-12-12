@@ -24,8 +24,8 @@ jobs:
       - name: Zip archiving
         id: archiving
         run: |
-          zip -q -r all-files-v${{ steps.download.outputs.version }}.zip ./*.zip
-          zip -q -r Components-v${{ steps.download.outputs.version }}.zip ./Components
+          zip -q -r all-files.zip ./*.zip
+          zip -q -r all-Components.zip ./Components
 
       - name: Upload files to release
         uses: softprops/action-gh-release@v1

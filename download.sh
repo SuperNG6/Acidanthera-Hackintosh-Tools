@@ -44,12 +44,21 @@ cp -r ./OpenCore ./Components/
 cat > ./README.md << EOF
 # Acidanthera Hackintosh Tools
 
-**AppleALC-${AppleALC_TAG}-RELEASE**  
-**IntelMausi-${IntelMausi_TAG}-RELEASE**  
-**Lilu-${Lilu_TAG}-RELEASE**  
-**NVMeFix-${NVMeFix_TAG}-RELEASE**  
-**OpenCore-${OpenCorePkg_TAG}-RELEASE**  
-**VirtualSMC-${VirtualSMC_TAG}-RELEASE**  
-**WhateverGreen-1.4.5-RELEASE**  
+## All Components download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/Components.zip
+
+## All files download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/all-files.zip
+
+
+| Components    | Version               |
+| ------------- | --------------------- |
+| OpenCorePkg   | ${OpenCorePkg_TAG}    | 
+| AppleALC      | ${AppleALC_TAG}       |
+| IntelMausi    | ${IntelMausi_TAG}     |
+| Lilu          | ${Lilu_TAG}           |
+| VirtualSMC    | ${VirtualSMC_TAG}     |
+| WhateverGreen | ${WhateverGreen_TAG}  |
+| NVMeFix       | ${NVMeFix_TAG}        |
 
 EOF
