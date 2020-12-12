@@ -34,7 +34,7 @@ jobs:
         with:
           name: Acidanthera Hackintosh Tools
           tag_name: ${{ steps.download.outputs.version }}
-          # body_path: Changelog
+          body_path: README.md
           files: |
             ./*.zip
 
