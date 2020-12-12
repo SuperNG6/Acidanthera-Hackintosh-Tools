@@ -1,5 +1,4 @@
 # Acidanthera Hackintosh Tools
-https://github.com/acidanthera
 
 ## All Components download link
 https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.6.4/Components.zip
