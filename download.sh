@@ -28,19 +28,60 @@ unzip -q OpenCore-${OpenCorePkg_TAG}-RELEASE.zip -d ./OpenCore
 unzip -q VirtualSMC-${VirtualSMC_TAG}-RELEASE.zip -d ./VirtualSMC
 # unzip -q WhateverGreen-${WhateverGreen_TAG}-RELEASE.zip -d ./WhateverGreen
 unzip -q WhateverGreen-1.4.5-RELEASE.zip -d ./WhateverGreen
+# 下载HfsPlus.efi到OC Drivers
+wget -q -P ./OpenCore/X64/EFI/OC/Drivers/ https://github.com/acidanthera/OcBinaryData/blob/master/Drivers/HfsPlus.efi
 
-# 创建Components文件夹
+# 创建 Components 文件夹
 mkdir ./Components
-# 复制关键文件到Components文件夹
-cp -r ./AppleALC/AppleALC.kext ./Components/
-cp -r ./IntelMausi/IntelMausi.kext ./Components/
-cp -r ./Lilu/Lilu.kext ./Components/
-cp -r ./NVMeFix/NVMeFix.kext ./Components/
-# cp -r ./WhateverGreen/WhateverGreen.kext ./Components/
-cp -r ./WhateverGreen/WhateverGreen.kext ./Components/
+# 复制关键文件到 Components 文件夹
+cp -r ./AppleALC/AppleALC.kext ./Components/kext/
+cp -r ./IntelMausi/IntelMausi.kext ./Components/kext/
+cp -r ./Lilu/Lilu.kext ./Components/kext/
+cp -r ./NVMeFix/NVMeFix.kext ./Components/kext/
+# cp -r ./WhateverGreen/WhateverGreen.kext ./Components/kext/
+cp -r ./WhateverGreen/WhateverGreen.kext ./Components/kext/
+
+# 复制 VirtualSMC kext 到 Components
+cp -r ./VirtualSMC/Kexts/VirtualSMC.kext ./Components/kext/
+cp -r ./VirtualSMC/Kexts/SMCSuperIO.kext ./Components/kext/
+cp -r ./VirtualSMC/Kexts/SMCProcessor.kext ./Components/kext/
+# 复制 OpenCore 核心组件到 Components
+cp -r ./OpenCore/X64/EFI/BOOT/BOOTx64.efi ./Components/OC/
+cp -r ./OpenCore/X64/EFI/OC/OpenCore.efi ./Components/OC/
+cp -r ./OpenCore/X64/EFI/OC/Drivers/OpenRuntime.efi ./Components/OC/
+cp -r ./OpenCore/X64/EFI/OC/Drivers/HfsPlus.efi ./Components/OC/
+# 复制 VirtualSMC 和 OpenCore 文件夹到 Components
+cp -r ./VirtualSMC ./Components/
+cp -r ./OpenCore ./Components/
+# 复制VirtualSMC和OpenCore文件夹到Components
 cp -r ./VirtualSMC ./Components/
 cp -r ./OpenCore ./Components/
 
+
+# 创建 OpenCore 模板
+cp -r ./OpenCore/X64/EFI ./Components/EFI
+# 删除非必要文件
+rm -rf ./Components/EFI/OC/Bootstrap
+rm -rf ./Components/EFI/OC/Tools/*
+rm -rf ./Components/EFI/OC/Drivers/*
+
+# 复制 OC Drivers
+cp -r ./OpenCore/X64/EFI/OC/Drivers/OpenRuntime.efi ./Components/EFI/OC/Drivers/
+cp -r ./OpenCore/X64/EFI/OC/Drivers/HfsPlus.efi ./Components/EFI/OC/Drivers/
+
+# 复制 VirtualSMC Kexts
+cp -r ./VirtualSMC/Kexts/VirtualSMC.kext ./Components/EFI/OC/Kexts/
+cp -r ./VirtualSMC/Kexts/SMCSuperIO.kext ./Components/EFI/OC/Kexts/
+cp -r ./VirtualSMC/Kexts/SMCProcessor.kext ./Components/EFI/OC/Kexts/
+
+# 复制 Kexts
+cp -r ./AppleALC/AppleALC.kext ./Components/EFI/OC/Kexts/
+cp -r ./IntelMausi/IntelMausi.kext ./Components/EFI/OC/Kexts/
+cp -r ./Lilu/Lilu.kext ./Components/EFI/OC/Kexts/
+cp -r ./NVMeFix/NVMeFix.kext ./Components/EFI/OC/Kexts/
+cp -r ./VirtualSMC/Kexts/SMCProcessor.kext ./Components/EFI/OC/Kexts/
+
+# 生成 README.md
 cat > ./README.md << EOF
 # Acidanthera Hackintosh Tools
 
