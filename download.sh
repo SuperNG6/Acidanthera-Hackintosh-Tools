@@ -28,8 +28,10 @@ unzip -q OpenCore-${OpenCorePkg_TAG}-RELEASE.zip -d ./OpenCore
 unzip -q VirtualSMC-${VirtualSMC_TAG}-RELEASE.zip -d ./VirtualSMC
 # unzip -q WhateverGreen-${WhateverGreen_TAG}-RELEASE.zip -d ./WhateverGreen
 unzip -q WhateverGreen-1.4.5-RELEASE.zip -d ./WhateverGreen
-# 下载HfsPlus.efi到OC Drivers
+# 下载 HfsPlus.efi 到 OC Drivers
 wget -q -P ./OpenCore/X64/EFI/OC/Drivers/ https://github.com/acidanthera/OcBinaryData/blob/master/Drivers/HfsPlus.efi
+zip -q -r HfsPlus.zip ./OpenCore/X64/EFI/OC/Drivers/HfsPlus.efi
+
 
 # 创建 Components 文件夹
 mkdir -p ./Components/OC

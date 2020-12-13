@@ -25,8 +25,8 @@ jobs:
         id: archiving
         run: |
           zip -q -r all-files.zip ./*.zip
-          zip -q -r all-Components.zip ./Components
-          zip -q -r EFI.zip ./EFI
+          zip -q -r Core-Components.zip ./Components
+          zip -q -r Core-EFI.zip ./EFI
 
       - name: Upload files to release
         uses: softprops/action-gh-release@v1
@@ -39,7 +39,7 @@ jobs:
           files: |
             ./*.zip
 
-      # 判断是否需要PUSH，手动构建时防止报错      
+      # 判断是否需要PUSH，防止手动构建时报错      
       - name: Set Version
         id: set-version
         run: |
