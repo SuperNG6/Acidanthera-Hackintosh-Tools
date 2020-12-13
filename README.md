@@ -1,7 +1,10 @@
 # Acidanthera Hackintosh Tools
 
-## All Components download link
-https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.6.4/Components.zip
+## Core EFI download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.6.4/Core-EFI.zip
+
+## Core Components download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.6.4/Core-Components.zip
 
 ## All files download link
 https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.6.4/all-files.zip
