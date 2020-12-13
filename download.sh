@@ -135,6 +135,12 @@ EOF
 # 生成 ReleaseNote.md
 cat > ./ReleaseNote.md << EOF
 
+## Core EFI download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/Core-EFI.zip
+
+## Core Components download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/Core-Components.zip
+
 | Components    | Version               |
 | ------------- | --------------------- |
 | OpenCorePkg   | ${OpenCorePkg_TAG}    | 
