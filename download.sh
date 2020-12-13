@@ -21,8 +21,8 @@ wget -q https://github.com/acidanthera/OpenCorePkg/releases/download/${OpenCoreP
 wget -q https://github.com/acidanthera/AppleALC/releases/download/${AppleALC_TAG}/AppleALC-${AppleALC_TAG}-RELEASE.zip
 
 # 下载最新黑苹果工具
-wget -O ${PWD}/OCC.zip https://mackie100projects.altervista.org/apps/opencoreconf/download-new-build.php?version=last
-wget -O ${PWD}/CCG.zip https://mackie100projects.altervista.org/apps/cloverconf/download-new-build.php?version=global
+wget -q -O ${PWD}/OCC.zip https://mackie100projects.altervista.org/apps/opencoreconf/download-new-build.php?version=last
+wget -q -O ${PWD}/CCG.zip https://mackie100projects.altervista.org/apps/cloverconf/download-new-build.php?version=global
 wget -q https://github.com/headkaze/Hackintool/releases/download/${Hackintool_TAG}/Hackintool.zip
 
 
