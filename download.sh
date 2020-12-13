@@ -88,8 +88,11 @@ cp -r ./VirtualSMC/Kexts/SMCProcessor.kext ./EFI/OC/Kexts/
 cat > ./README.md << EOF
 # Acidanthera Hackintosh Tools
 
-## All Components download link
-https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/Components.zip
+## Core EFI download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/Core-EFI.zip
+
+## Core Components download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/Core-Components.zip
 
 ## All files download link
 https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/all-files.zip

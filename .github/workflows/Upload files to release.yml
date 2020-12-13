@@ -6,6 +6,9 @@ on:
     - cron: '0 2 12 * *'
 
 
+env:
+  Manual_PUSH: true
+
 jobs:
   download:
     runs-on: ubuntu-latest
@@ -65,7 +68,7 @@ jobs:
 
       # push到GitHub的项目当中
       - name: Push
-        if: steps.set-version.outputs.status == 'success'
+        if: steps.set-version.outputs.status == 'success' || env.Manual_PUSH == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
