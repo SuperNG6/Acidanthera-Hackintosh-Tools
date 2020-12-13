@@ -1,4 +1,4 @@
-# Acidanthera Hackintosh Tools
+# Acidanthera && Hackintosh Tools
 
 ## Core EFI download link
 https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.6.4/Core-EFI.zip
@@ -9,6 +9,14 @@ https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.6.4
 ## All files download link
 https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.6.4/all-files.zip
 
+## OpenCore Configurator download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.6.4/OCC.zip
+
+## Clover Configurator download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.6.4/CCG.zip
+
+## Hackintool download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.6.4/Hackintool.zip
 
 | Components    | Version               |
 | ------------- | --------------------- |
@@ -19,4 +27,10 @@ https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.6.4
 | VirtualSMC    | 1.1.9     |
 | WhateverGreen | ac8b935  |
 | NVMeFix       | 1.0.4        |
+
+| Hackintosh Tools      | Version           |
+| --------------------- | ----------------- |
+| OpenCore Configurator | Latest            | 
+| Clover Configurator   | Latest            |
+| Hackintool            | 3.4.9 |
 
