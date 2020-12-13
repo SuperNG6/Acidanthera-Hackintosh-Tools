@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       # 获取latest release tag，cut切割无关内容。和仓库中LocalReleaseTag对比，之后输出tag给之后的步骤
-      - name: Download Acidanthera Hackintosh Tools
+      - name: Download Acidanthera && Hackintosh Tools
         id: download
         run: |
           chmod +x download.sh && bash download.sh
@@ -36,9 +36,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: Acidanthera Hackintosh Tools
+          name: Hackintosh Tools
           tag_name: ${{ steps.download.outputs.version }}
-          body_path: README.md
+          body_path: ReleaseNote.md
           files: |
             ./*.zip
 

@@ -8,6 +8,7 @@ Lilu_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidant
 WhateverGreen_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidanthera/WhateverGreen/tags | grep 'name' | cut -d\" -f4 | head -1 )
 OpenCorePkg_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidanthera/OpenCorePkg/tags | grep 'name' | cut -d\" -f4 | head -1 )
 AppleALC_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidanthera/AppleALC/tags | grep 'name' | cut -d\" -f4 | head -1 )
+Hackintool_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/headkaze/Hackintool/tags | grep 'name' | cut -d\" -f4 | head -1 )
 
 # 下载最新release文件
 wget -q https://github.com/acidanthera/NVMeFix/releases/download/${NVMeFix_TAG}/NVMeFix-${NVMeFix_TAG}-RELEASE.zip
@@ -18,6 +19,13 @@ wget -q https://github.com/acidanthera/Lilu/releases/download/${Lilu_TAG}/Lilu-$
 wget -q https://github.com/acidanthera/WhateverGreen/releases/download/1.4.5/WhateverGreen-1.4.5-RELEASE.zip
 wget -q https://github.com/acidanthera/OpenCorePkg/releases/download/${OpenCorePkg_TAG}/OpenCore-${OpenCorePkg_TAG}-RELEASE.zip
 wget -q https://github.com/acidanthera/AppleALC/releases/download/${AppleALC_TAG}/AppleALC-${AppleALC_TAG}-RELEASE.zip
+
+# 下载最新黑苹果工具
+wget -O ${PWD}/OCC.zip https://mackie100projects.altervista.org/apps/opencoreconf/download-new-build.php?version=last
+wget -O ${PWD}/CCG.zip https://mackie100projects.altervista.org/apps/cloverconf/download-new-build.php?version=global
+wget -q https://github.com/headkaze/Hackintool/releases/download/${Hackintool_TAG}/Hackintool.zip
+
+
 
 # 解压
 unzip -q AppleALC-${AppleALC_TAG}-RELEASE.zip -d ./AppleALC
@@ -86,7 +94,7 @@ cp -r ./VirtualSMC/Kexts/SMCProcessor.kext ./EFI/OC/Kexts/
 
 # 生成 README.md
 cat > ./README.md << EOF
-# Acidanthera Hackintosh Tools
+# Acidanthera && Hackintosh Tools
 
 ## Core EFI download link
 https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/Core-EFI.zip
@@ -97,6 +105,14 @@ https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${Ope
 ## All files download link
 https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/all-files.zip
 
+## OpenCore Configurator download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/OCC.zip
+
+## Clover Configurator download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/CCG.zip
+
+## Hackintool download link
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/Hackintool.zip
 
 | Components    | Version               |
 | ------------- | --------------------- |
@@ -107,5 +123,32 @@ https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${Ope
 | VirtualSMC    | ${VirtualSMC_TAG}     |
 | WhateverGreen | ${WhateverGreen_TAG}  |
 | NVMeFix       | ${NVMeFix_TAG}        |
+
+| Hackintosh Tools      | Version           |
+| --------------------- | ----------------- |
+| OpenCore Configurator | Latest            | 
+| Clover Configurator   | Latest            |
+| Hackintool            | ${Hackintool_TAG} |
+
+EOF
+
+# 生成 ReleaseNote.md
+cat > ./ReleaseNote.md << EOF
+
+| Components    | Version               |
+| ------------- | --------------------- |
+| OpenCorePkg   | ${OpenCorePkg_TAG}    | 
+| AppleALC      | ${AppleALC_TAG}       |
+| IntelMausi    | ${IntelMausi_TAG}     |
+| Lilu          | ${Lilu_TAG}           |
+| VirtualSMC    | ${VirtualSMC_TAG}     |
+| WhateverGreen | ${WhateverGreen_TAG}  |
+| NVMeFix       | ${NVMeFix_TAG}        |
+
+| Hackintosh Tools      | Version           |
+| --------------------- | ----------------- |
+| OpenCore Configurator | Latest            | 
+| Clover Configurator   | Latest            |
+| Hackintool            | ${Hackintool_TAG} |
 
 EOF
