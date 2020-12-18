@@ -1,4 +1,4 @@
-name: Upload files to release
+name: Manual Upload files to release
 
 on:
   workflow_dispatch:
