@@ -17,6 +17,11 @@ jobs:
           echo "ReleaseTag=$(cat ReleaseTag | head -n1)"
           echo "::set-output name=status::success"
 
+      - name: Download file
+        id: download-files
+        run: |
+          chmod +x download.sh && bash download.sh
+
       - name: Zip archiving
         id: archiving
         run: |
