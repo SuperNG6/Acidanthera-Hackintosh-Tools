@@ -1,0 +1,36 @@
+name: Upload files to release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Set Version
+        id: set-version
+        run: |
+          echo "::set-output name=version::$(cat ReleaseTag | head -n1)"
+          echo "ReleaseTag=$(cat ReleaseTag | head -n1)"
+          echo "::set-output name=status::success"
+
+      - name: Zip archiving
+        id: archiving
+        run: |
+          zip -q -r all-files.zip ./*.zip
+          zip -q -r Core-Components.zip ./Components
+          zip -q -r Core-EFI.zip ./EFI
+
+      - name: Upload files to release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: Hackintosh Tools
+          tag_name: ${{ steps.set-version.outputs.version }}
+          body_path: ReleaseNote.md
+          files: |
+            ./*.zip
