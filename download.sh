@@ -26,7 +26,6 @@ wget -q -O ${PWD}/CCG.zip https://mackie100projects.altervista.org/apps/cloverco
 wget -q https://github.com/headkaze/Hackintool/releases/download/${Hackintool_TAG}/Hackintool.zip
 
 
-
 # 解压
 unzip -q AppleALC-${AppleALC_TAG}-RELEASE.zip -d ./AppleALC
 unzip -q IntelMausi-${IntelMausi_TAG}-RELEASE.zip -d ./IntelMausi
@@ -37,7 +36,7 @@ unzip -q VirtualSMC-${VirtualSMC_TAG}-RELEASE.zip -d ./VirtualSMC
 # unzip -q WhateverGreen-${WhateverGreen_TAG}-RELEASE.zip -d ./WhateverGreen
 unzip -q WhateverGreen-1.4.5-RELEASE.zip -d ./WhateverGreen
 # 下载 HfsPlus.efi 到 OC Drivers
-wget -q -P ./OpenCore/X64/EFI/OC/Drivers/ https://github.com/acidanthera/OcBinaryData/blob/master/Drivers/HfsPlus.efi
+wget -q -P ./OpenCore/X64/EFI/OC/Drivers/ https://raw.githubusercontent.com/acidanthera/OcBinaryData/master/Drivers/HfsPlus.efi
 zip -q -r HfsPlus.zip ./OpenCore/X64/EFI/OC/Drivers/HfsPlus.efi
 
 
