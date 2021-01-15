@@ -34,7 +34,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: Hackintosh Tools
+          name: Hackintosh Tools v${{ steps.set-version.outputs.version }}
           tag_name: ${{ steps.set-version.outputs.version }}
           body_path: ReleaseNote.md
           files: |

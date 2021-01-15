@@ -15,7 +15,7 @@ wget -q https://github.com/acidanthera/NVMeFix/releases/download/${NVMeFix_TAG}/
 wget -q https://github.com/acidanthera/IntelMausi/releases/download/${IntelMausi_TAG}/IntelMausi-${IntelMausi_TAG}-RELEASE.zip
 wget -q https://github.com/acidanthera/VirtualSMC/releases/download/${VirtualSMC_TAG}/VirtualSMC-${VirtualSMC_TAG}-RELEASE.zip
 wget -q https://github.com/acidanthera/Lilu/releases/download/${Lilu_TAG}/Lilu-${Lilu_TAG}-RELEASE.zip
-wget -q https://github.com/acidanthera/WhateverGreen/releases/download/${WhateverGreen_TAG}/WhateverGreen_${WhateverGreen-TAG}-RELEASE.zip
+wget -q https://github.com/acidanthera/WhateverGreen/releases/download/${WhateverGreen_TAG}/WhateverGreen-${WhateverGreen_TAG}-RELEASE.zip
 wget -q https://github.com/acidanthera/OpenCorePkg/releases/download/${OpenCorePkg_TAG}/OpenCore-${OpenCorePkg_TAG}-RELEASE.zip
 wget -q https://github.com/acidanthera/AppleALC/releases/download/${AppleALC_TAG}/AppleALC-${AppleALC_TAG}-RELEASE.zip
 
@@ -45,7 +45,6 @@ cp -r ./AppleALC/AppleALC.kext ./Components/
 cp -r ./IntelMausi/IntelMausi.kext ./Components/
 cp -r ./Lilu/Lilu.kext ./Components/
 cp -r ./NVMeFix/NVMeFix.kext ./Components/
-# cp -r ./WhateverGreen/WhateverGreen.kext ./Components/
 cp -r ./WhateverGreen/WhateverGreen.kext ./Components/
 
 # 复制 VirtualSMC kext 到 Components
