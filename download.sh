@@ -10,6 +10,17 @@ OpenCorePkg_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/
 AppleALC_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidanthera/AppleALC/tags | grep 'name' | cut -d\" -f4 | head -1 )
 Hackintool_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/headkaze/Hackintool/tags | grep 'name' | cut -d\" -f4 | head -1 )
 
+# 输出 release tag
+cat > ./ReleaseTag << EOF
+${OpenCorePkg_TAG}
+OpenCorePkg=${OpenCorePkg_TAG}
+AppleALC=${AppleALC_TAG}
+IntelMausi=${IntelMausi_TAG}
+VirtualSMC=${VirtualSMC_TAG}
+WhateverGreen=${WhateverGreen_TAG}
+NVMeFix=${NVMeFix_TAG}
+EOF
+
 # 下载最新release文件
 wget -q https://github.com/acidanthera/NVMeFix/releases/download/${NVMeFix_TAG}/NVMeFix-${NVMeFix_TAG}-RELEASE.zip
 wget -q https://github.com/acidanthera/IntelMausi/releases/download/${IntelMausi_TAG}/IntelMausi-${IntelMausi_TAG}-RELEASE.zip

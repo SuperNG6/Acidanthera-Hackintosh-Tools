@@ -29,11 +29,6 @@ jobs:
              echo "::set-output name=status::success"
           fi
 
-      - name: Update ReleaseTag
-        if: steps.set-version.outputs.status == 'success'
-        run: |
-          echo ${{ steps.set-version.outputs.version }} > ./ReleaseTag
-
       - name: Download file
         if: steps.set-version.outputs.status == 'success'
         id: download-files
