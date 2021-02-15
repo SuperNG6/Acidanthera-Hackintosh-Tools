@@ -35,7 +35,6 @@ wget -q -O ${PWD}/OCC.zip https://mackie100projects.altervista.org/apps/opencore
 wget -q -O ${PWD}/CCG.zip https://mackie100projects.altervista.org/apps/cloverconf/download-new-build.php?version=global
 wget -q https://github.com/headkaze/Hackintool/releases/download/${Hackintool_TAG}/Hackintool.zip
 
-
 # 解压
 unzip -q AppleALC-${AppleALC_TAG}-RELEASE.zip -d ./AppleALC
 unzip -q IntelMausi-${IntelMausi_TAG}-RELEASE.zip -d ./IntelMausi
