@@ -16,6 +16,7 @@ ${OpenCorePkg_TAG}
 OpenCorePkg=${OpenCorePkg_TAG}
 AppleALC=${AppleALC_TAG}
 IntelMausi=${IntelMausi_TAG}
+Lilu=${Lilu_TAG}
 VirtualSMC=${VirtualSMC_TAG}
 WhateverGreen=${WhateverGreen_TAG}
 NVMeFix=${NVMeFix_TAG}
