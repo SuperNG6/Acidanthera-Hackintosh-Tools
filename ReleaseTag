@@ -1,8 +1,8 @@
-0.7.1
-OpenCorePkg=0.7.1
-AppleALC=1.6.2
+0.7.2
+OpenCorePkg=0.7.2
+AppleALC=1.6.3
 IntelMausi=1.0.7
-Lilu=1.5.4
-VirtualSMC=1.2.5
-WhateverGreen=1.5.1
+Lilu=1.5.5
+VirtualSMC=1.2.6
+WhateverGreen=1.5.2
 NVMeFix=1.0.9
