@@ -67,6 +67,8 @@ cp -r ./OpenCore/X64/EFI/BOOT/BOOTx64.efi ./Components/OC/
 cp -r ./OpenCore/X64/EFI/OC/OpenCore.efi ./Components/OC/
 cp -r ./OpenCore/X64/EFI/OC/Drivers/OpenRuntime.efi ./Components/OC/
 cp -r ./OpenCore/X64/EFI/OC/Drivers/HfsPlus.efi ./Components/OC/
+cp -r ./OpenCore/X64/EFI/OC/Drivers/ResetNvramEntry.efi ./Components/OC/
+cp -r ./OpenCore/X64/EFI/OC/Drivers/ToggleSipEntry.efi ./Components/OC/
 # 复制 VirtualSMC 和 OpenCore 文件夹到 Components
 cp -r ./VirtualSMC ./Components/
 cp -r ./OpenCore ./Components/
@@ -85,6 +87,8 @@ rm -rf ./EFI/OC/Drivers/*
 # 复制 OC Drivers
 cp -r ./OpenCore/X64/EFI/OC/Drivers/OpenRuntime.efi ./EFI/OC/Drivers/
 cp -r ./OpenCore/X64/EFI/OC/Drivers/HfsPlus.efi ./EFI/OC/Drivers/
+cp -r ./OpenCore/X64/EFI/OC/Drivers/ResetNvramEntry.efi ./EFI/OC/Drivers/
+cp -r ./OpenCore/X64/EFI/OC/Drivers/ToggleSipEntry.efi ./EFI/OC/Drivers/
 
 # 复制 VirtualSMC Kexts
 cp -r ./VirtualSMC/Kexts/VirtualSMC.kext ./EFI/OC/Kexts/
