@@ -1,13 +1,13 @@
 
 ### Core EFI download link
-https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.8.4/Core-EFI.zip
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.8.5/Core-EFI.zip
 
 ### Core Components download link
-https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.8.4/Core-Components.zip
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.8.5/Core-Components.zip
 
 | Components    | Version               |
 | ------------- | --------------------- |
-| OpenCorePkg   | 0.8.4    | 
+| OpenCorePkg   | 0.8.5    | 
 | AppleALC      | 1.7.5       |
 | IntelMausi    | 1.0.7     |
 | Lilu          | 1.6.2           |
