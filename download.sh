@@ -8,6 +8,7 @@ Lilu_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidant
 WhateverGreen_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidanthera/WhateverGreen/tags | grep 'name' | cut -d\" -f4 | head -n 2 | tail -n 1 )
 OpenCorePkg_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidanthera/OpenCorePkg/tags | grep 'name' | cut -d\" -f4 | head -1 )
 AppleALC_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidanthera/AppleALC/tags | grep 'name' | cut -d\" -f4 | head -1 )
+RestrictEvents_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidanthera/RestrictEvents/tags | grep 'name' | cut -d\" -f4 | head -1 )
 Hackintool_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/headkaze/Hackintool/tags | grep 'name' | cut -d\" -f4 | head -1 )
 
 # 输出 release tag
@@ -20,6 +21,7 @@ Lilu=${Lilu_TAG}
 VirtualSMC=${VirtualSMC_TAG}
 WhateverGreen=${WhateverGreen_TAG}
 NVMeFix=${NVMeFix_TAG}
+RestrictEvents=${RestrictEvents_TAG}
 EOF
 
 # 下载最新release文件
@@ -30,6 +32,7 @@ wget -q https://github.com/acidanthera/Lilu/releases/download/${Lilu_TAG}/Lilu-$
 wget -q https://github.com/acidanthera/WhateverGreen/releases/download/${WhateverGreen_TAG}/WhateverGreen-${WhateverGreen_TAG}-RELEASE.zip
 wget -q https://github.com/acidanthera/OpenCorePkg/releases/download/${OpenCorePkg_TAG}/OpenCore-${OpenCorePkg_TAG}-RELEASE.zip
 wget -q https://github.com/acidanthera/AppleALC/releases/download/${AppleALC_TAG}/AppleALC-${AppleALC_TAG}-RELEASE.zip
+wget -q https://github.com/acidanthera/AppleALC/releases/download/${RestrictEvents_TAG}/RestrictEvents-${RestrictEvents_TAG}-RELEASE.zip
 
 # 下载最新黑苹果工具
 wget -q -O ${PWD}/OCC.zip https://mackie100projects.altervista.org/apps/opencoreconf/download-new-build.php?version=last
@@ -44,6 +47,8 @@ unzip -q NVMeFix-${NVMeFix_TAG}-RELEASE.zip -d ./NVMeFix
 unzip -q OpenCore-${OpenCorePkg_TAG}-RELEASE.zip -d ./OpenCore
 unzip -q VirtualSMC-${VirtualSMC_TAG}-RELEASE.zip -d ./VirtualSMC
 unzip -q WhateverGreen-${WhateverGreen_TAG}-RELEASE.zip -d ./WhateverGreen
+unzip -q WhateverGreen-${RestrictEvents_TAG}-RELEASE.zip -d ./RestrictEvents
+
 # 下载 HfsPlus.efi 到 OC Drivers
 wget -q -P ./OpenCore/X64/EFI/OC/Drivers/ https://raw.githubusercontent.com/acidanthera/OcBinaryData/master/Drivers/HfsPlus.efi
 zip -q -r HfsPlus.zip ./OpenCore/X64/EFI/OC/Drivers/HfsPlus.efi
@@ -57,6 +62,7 @@ cp -r ./IntelMausi/IntelMausi.kext ./Components/
 cp -r ./Lilu/Lilu.kext ./Components/
 cp -r ./NVMeFix/NVMeFix.kext ./Components/
 cp -r ./WhateverGreen/WhateverGreen.kext ./Components/
+cp -r ./RestrictEvents/RestrictEvents.kext ./Components/
 
 # 复制 VirtualSMC kext 到 Components
 cp -r ./VirtualSMC/Kexts/VirtualSMC.kext ./Components/
@@ -104,6 +110,7 @@ cp -r ./Lilu/Lilu.kext ./EFI/OC/Kexts/
 cp -r ./WhateverGreen/WhateverGreen.kext ./EFI/OC/Kexts/
 cp -r ./NVMeFix/NVMeFix.kext ./EFI/OC/Kexts/
 cp -r ./VirtualSMC/Kexts/SMCProcessor.kext ./EFI/OC/Kexts/
+cp -r ./VirtualSMC/Kexts/RestrictEvents.kext ./EFI/OC/Kexts/
 
 # 生成 README.md
 cat > ./README.md << EOF
@@ -127,6 +134,7 @@ https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${Ope
 | VirtualSMC    | ${VirtualSMC_TAG}     |
 | WhateverGreen | ${WhateverGreen_TAG}  |
 | NVMeFix       | ${NVMeFix_TAG}        |
+| RestrictEvents| ${RestrictEvents_TAG} |
 
 ### OpenCore Configurator download link
 https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${OpenCorePkg_TAG}/OCC.zip
