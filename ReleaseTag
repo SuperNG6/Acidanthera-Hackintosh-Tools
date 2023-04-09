@@ -1,9 +1,9 @@
-0.9.0
-OpenCorePkg=0.9.0
-AppleALC=1.8.0
+0.9.1
+OpenCorePkg=0.9.1
+AppleALC=1.8.1
 IntelMausi=1.0.7
 Lilu=1.6.4
 VirtualSMC=1.3.1
 WhateverGreen=1.6.4
 NVMeFix=1.1.0
-RestrictEvents=1.0.9
+RestrictEvents=1.1.0
