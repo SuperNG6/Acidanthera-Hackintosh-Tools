@@ -1,18 +1,18 @@
 # Acidanthera && Hackintosh Tools
 
 ### Core EFI download link
-https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.6/Core-EFI.zip
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.8/Core-EFI.zip
 
 ### Core Components download link
-https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.6/Core-Components.zip
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.8/Core-Components.zip
 
 ### All files download link
-https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.6/all-files.zip
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.8/all-files.zip
 
 | Components    | Version               |
 | ------------- | --------------------- |
-| OpenCorePkg   | 0.9.6    | 
-| AppleALC      | 1.8.7       |
+| OpenCorePkg   | 0.9.8    | 
+| AppleALC      | 1.8.9       |
 | IntelMausi    | 1.0.7     |
 | Lilu          | 1.6.7           |
 | VirtualSMC    | 1.3.2     |
@@ -21,13 +21,13 @@ https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.6
 | RestrictEvents| 1.1.3 |
 
 ### OpenCore Configurator download link
-https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.6/OCC.zip
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.8/OCC.zip
 
 ### Clover Configurator download link
-https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.6/CCG.zip
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.8/CCG.zip
 
 ### Hackintool download link
-https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.6/Hackintool.zip
+https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/0.9.8/Hackintool.zip
 
 | Hackintosh Tools      | Version           |
 | --------------------- | ----------------- |
