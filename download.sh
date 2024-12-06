@@ -10,7 +10,7 @@ OpenCorePkg_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/
 AppleALC_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidanthera/AppleALC/tags | grep 'name' | cut -d\" -f4 | head -1 )
 RestrictEvents_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/acidanthera/RestrictEvents/tags | grep 'name' | cut -d\" -f4 | head -1 )
 Hackintool_TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/headkaze/Hackintool/tags | grep 'name' | cut -d\" -f4 | head -1 )
-CC_TAG=$(curl -s "https://mackie100projects.altervista.org/download-clover-configurator/" | grep -o 'Version: [0-9.]*' | cut -d' ' -f2 | head -n 1)
+CCG_TAG=$(curl -s "https://mackie100projects.altervista.org/download-clover-configurator/" | grep -o 'Version: [0-9.]*' | cut -d' ' -f2 | head -n 1)
 OCC_TAG=$(curl -s "https://mackie100projects.altervista.org/download-opencore-configurator/" | grep -o 'OpenCore Configurator [0-9.]*' | head -n 1 | sed 's/OpenCore Configurator //')
 
 # 输出 release tag
@@ -37,8 +37,8 @@ wget -q https://github.com/acidanthera/AppleALC/releases/download/${AppleALC_TAG
 wget -q https://github.com/acidanthera/AppleALC/releases/download/${RestrictEvents_TAG}/RestrictEvents-${RestrictEvents_TAG}-RELEASE.zip
 
 # 下载最新黑苹果工具
-wget -q -O ${PWD}/OCC.zip https://mackie100projects.altervista.org/apps/opencoreconf/download-new-build.php?version=last
-wget -q -O ${PWD}/CCG.zip https://mackie100projects.altervista.org/apps/cloverconf/download-new-build.php?version=global
+wget -q -O ${PWD}/OCC-${OCC_TAG}.zip https://mackie100projects.altervista.org/apps/opencoreconf/download-new-build.php?version=last
+wget -q -O ${PWD}/CCG-${CCG_TAG}.zip https://mackie100projects.altervista.org/apps/cloverconf/download-new-build.php?version=global
 wget -q https://github.com/headkaze/Hackintool/releases/download/${Hackintool_TAG}/Hackintool.zip
 
 # 解压
@@ -150,7 +150,7 @@ https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${Ope
 | Hackintosh Tools      | Version           |
 | --------------------- | ----------------- |
 | OpenCore Configurator | ${OCC_TAG}        | 
-| Clover Configurator   | ${CC_TAG}         |
+| Clover Configurator   | ${CCG_TAG}         |
 | Hackintool            | ${Hackintool_TAG} |
 
 EOF
@@ -177,7 +177,7 @@ https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/${Ope
 | Hackintosh Tools      | Version           |
 | --------------------- | ----------------- |
 | OpenCore Configurator | ${OCC_TAG}        | 
-| Clover Configurator   | ${CC_TAG}         |
+| Clover Configurator   | ${CCG_TAG}         |
 | Hackintool            | ${Hackintool_TAG} |
 
 EOF
