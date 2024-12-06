@@ -17,7 +17,7 @@ https://github.com/SuperNG6/Acidanthera-Hackintosh-Tools/releases/download/1.0.3
 
 | Hackintosh Tools      | Version           |
 | --------------------- | ----------------- |
-| OpenCore Configurator | Latest            | 
-| Clover Configurator   | Latest            |
+| OpenCore Configurator | 2.77.1.0        | 
+| Clover Configurator   |          |
 | Hackintool            | 4.0.3 |
 
